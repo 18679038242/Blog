@@ -28,7 +28,7 @@ jobs:
           cp -a ./* /opt/Gmeek/
           cd /opt/Gmeek/
           pip install -r requirements.txt
-          python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }}
+          python Gmeek.py ${{ secrets.GMEEK_TOKEN }} ${{ github.repository }}
           cp -a /opt/Gmeek/docs ${{ github.workspace }}
           
       - name: Upload artifact
