@@ -2,7 +2,9 @@
     "title": "我的超级博客",
     "subTitle": "记录代码与生活",
     "displayTitle": "Blog",
-    "homeUrl": "https://github.com",
+    "homeUrl": "https://18679038242.github.io/Blog",
     "faviconUrl": "https://github.githubassets.com/favicons/favicon.svg",
-    "singlePage": []
+    "avatarUrl": "https://github.githubassets.com/favicons/favicon.svg",
+    "singlePage": [],
+    "GMEEK_VERSION": "last"
 }
