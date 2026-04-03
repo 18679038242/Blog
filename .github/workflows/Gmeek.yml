@@ -1,9 +1,11 @@
 name: Gmeek
+
 on:
-  errors:
+  workflow_dispatch:
   issues:
     types: [opened, edited]
-  workflow_dispatch:
+  release:
+    types: [published]
 
 jobs:
   build:
