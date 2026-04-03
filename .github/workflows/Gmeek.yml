@@ -1,4 +1,4 @@
-name: Gmeek
+name: build Gmeek
 
 on:
   workflow_dispatch:
@@ -9,11 +9,32 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    name: Generate blog
+    runs-on: ubuntu-22.04
+    if: github.event.repository.owner.id == github.event.sender.id
+    permissions: write-all
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Gmeek
-        uses: Meekdai/Gmeek@last
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Build
+        run: |
+          sudo mkdir -p /opt/Gmeek
+          sudo chown -R $USER:$USER /opt/Gmeek
+          git clone https://github.com/Meekdai/Gmeek.git /opt/Gmeek
+          cp -a ./* /opt/Gmeek/
+          cd /opt/Gmeek/
+          python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }}
+          cp -a /opt/Gmeek/docs ${{ github.workspace }}
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          GMEEK_VERSION: last
+          path: 'docs/.'
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
