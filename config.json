@@ -1,10 +1,8 @@
 {
-    "title":"我的个人空间",
-    "subTitle":"在这里记录我的技术文档",
-    "displayTitle":"Vector Blog",
-    "homeUrl":"https://github.com/18679038242/Blog/new/main",
-    "faviconUrl":"https://github.githubassets.com/favicons/favicon.svg",
-    "email":"640601174@qq.com",
-    "startSiteTime":"01/01/2025",
-    "singlePage":["about"]
+    "title": "我的超级博客",
+    "subTitle": "记录代码与生活",
+    "displayTitle": "Blog",
+    "homeUrl": "https://github.com",
+    "faviconUrl": "https://github.githubassets.com/favicons/favicon.svg",
+    "singlePage": ["about"]
 }
