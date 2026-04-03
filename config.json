@@ -4,5 +4,5 @@
     "displayTitle": "Blog",
     "homeUrl": "https://github.com",
     "faviconUrl": "https://github.githubassets.com/favicons/favicon.svg",
-    "singlePage": ["about"]
+    "singlePage": []
 }
