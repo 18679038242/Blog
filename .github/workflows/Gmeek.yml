@@ -1,0 +1,17 @@
+name: Gmeek
+on:
+  errors:
+  issues:
+    types: [opened, edited]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Gmeek
+        uses: Meekdai/Gmeek@main
+        with:
+          GMEEK_VERSION: last
